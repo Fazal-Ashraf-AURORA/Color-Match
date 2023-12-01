@@ -5,9 +5,11 @@ public class CollisionHandler : MonoBehaviour {
     
     public int score = 0; // Player score
     public TextMeshProUGUI scoreUI;
+    public ChangeColorOnClick playerColorRef;
 
     private void Start() {
         scoreUI.text = "Score:0";
+        playerColorRef = GetComponent<ChangeColorOnClick>();
     }
 
     // Called when a 2D collider enters another collider
@@ -18,12 +20,12 @@ public class CollisionHandler : MonoBehaviour {
             Color playerColor = GetComponent<SpriteRenderer>().color;
 
             // Check if the circle has the same color as the player
-            if (collision.gameObject.CompareTag("RedCircle") && playerColor == Color.red) {
+            if (collision.gameObject.CompareTag("RedCircle") && playerColor == playerColorRef.color1) {
                 // Increase the score
                 score++;
                 scoreUI.text = "Score: " + score;
                 //Debug.Log("Score: " + score);
-            } else if (collision.gameObject.CompareTag("BlueCircle") && playerColor == Color.blue) {
+            } else if (collision.gameObject.CompareTag("BlueCircle") && playerColor == playerColorRef.color2) {
                 // Increase the score
                 score++;
                 scoreUI.text = "Score: " + score;
@@ -37,12 +39,12 @@ public class CollisionHandler : MonoBehaviour {
             Color playerColor = GetComponent<SpriteRenderer>().color;
 
             // Check if the square has the opposite color as the player
-            if (collision.gameObject.CompareTag("RedSquare") && playerColor == Color.blue) {
+            if (collision.gameObject.CompareTag("RedSquare") && playerColor == playerColorRef.color2) {
                 // Increase the score
                 score++;
                 scoreUI.text = "Score: " + score;
                 //Debug.Log("Score: " + score);
-            } else if (collision.gameObject.CompareTag("BlueSquare") && playerColor == Color.red) {
+            } else if (collision.gameObject.CompareTag("BlueSquare") && playerColor == playerColorRef.color1) {
                 // Increase the score
                 score++;
                 scoreUI.text = "Score: " + score;

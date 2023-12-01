@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public class ChangeColorOnClick : MonoBehaviour {
-    public Color color1 = Color.red; // First color
-    public Color color2 = Color.blue; // Second color
+    public Color color1; // First color
+    public Color color2; // Second color
 
     private SpriteRenderer spriteRenderer;
     private bool isColor1 = true; // Flag to toggle between colors
