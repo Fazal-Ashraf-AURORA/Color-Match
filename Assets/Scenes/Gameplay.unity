@@ -960,13 +960,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b98ef3663aaf479be70fcdbd32459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
+  shapesToSpawn:
   - {fileID: 219777970895841811, guid: 9b508077b3c24e740be51d5ca39a49d2, type: 3}
   - {fileID: 8517545799520368162, guid: 975e42f158ea56a449f96201437dbf7c, type: 3}
   - {fileID: 783021385780503571, guid: 0fcb2a584c9805b498b3e5f541e4bb8b, type: 3}
   - {fileID: 3812629629011324634, guid: 8835c5e176bbcdb4589b40db007fef84, type: 3}
-  spawnRange: {x: -5, y: 5}
-  spawnDelay: 3
 --- !u!1 &1194696161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,9 +1904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalScoreUI: {fileID: 2043662557}
   collisionHandler: {fileID: 1654872942}
-  currentSpeed: 0
   gameOverUI: {fileID: 80379729}
-  baseSpeed: 1
 --- !u!4 &1779787007
 Transform:
   m_ObjectHideFlags: 0
