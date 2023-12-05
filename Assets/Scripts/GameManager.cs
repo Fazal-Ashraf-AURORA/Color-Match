@@ -6,29 +6,57 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
 
-    public TextMeshProUGUI finalScoreUI;
-    public static  bool isGameOver = false;
-    public static int SCORE = 0;
-    [SerializeField] CollisionHandler collisionHandler;
+    #region Advertisement
 
+    loadBanner banner;
+    loadInterstitial interstitial;
+    loadRewarded rewarded;
+    int gameOverCounts = 0;
+
+    #endregion
+
+    [SerializeField] Canvas canvas;
+    [SerializeField] CollisionHandler collisionHandler;
     [SerializeField] GameObject gameOverUI;
+    public TextMeshProUGUI finalScoreUI;
+
+    public static bool isGameOver = false;
+    public static int SCORE = 0;
+
     private int previousScore = 0; // The score from the previous frame.
+
+    private void Awake() {
+        //if (instance == null) {
+        //    // If no instance exists, set the current instance to this and mark it to not be destroyed on load
+        //    instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //} else {
+        //    // If an instance already exists, destroy this one
+        //    Destroy(gameObject);
+        //}
+
+        canvas = FindAnyObjectByType<Canvas>();
+
+        banner = canvas.GetComponent<loadBanner>();
+        interstitial = canvas.GetComponent<loadInterstitial>();
+        rewarded = canvas.GetComponent<loadRewarded>();
+    }
 
     void Start() {
         isGameOver = false;
         gameOverUI.SetActive(false);
         SCORE = 0;
-      
+
         Application.targetFrameRate = 60;
-        
+        banner.LoadBanner();
     }
 
     void Update() {
-
         // Get the current score from your score manager.
         int currentScore = SCORE;
 
-        if(isGameOver) {
+        if (isGameOver) {
+            Debug.Log(gameOverCounts);
             GameOver();
         }
     }
@@ -54,12 +82,26 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver() {
         Debug.Log("Game Over!!!");
-        isGameOver = false;
 
-        finalScoreUI.text = "Score: "+SCORE;
+        // Check if the script component is still attached to a GameObject
+        if (this == null || gameObject == null) {
+            return;
+        }
 
-        isGameOver = false;
-        Time.timeScale = 0;
-        gameOverUI.SetActive(true);
+        // Check if the GameManager's GameObject is not null before accessing it
+        if (gameObject != null) {
+            isGameOver = false;
+            //gameOverCounts++;
+
+            interstitial.LoadAd();
+
+            finalScoreUI.text = "Score: " + SCORE;
+
+            Time.timeScale = 0;
+            gameOverUI.SetActive(true);
+
+            
+        }
     }
+
 }

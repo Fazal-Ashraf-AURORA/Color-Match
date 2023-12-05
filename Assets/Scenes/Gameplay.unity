@@ -977,6 +977,10 @@ GameObject:
   - component: {fileID: 1194696164}
   - component: {fileID: 1194696163}
   - component: {fileID: 1194696162}
+  - component: {fileID: 1194696166}
+  - component: {fileID: 1194696169}
+  - component: {fileID: 1194696168}
+  - component: {fileID: 1194696167}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1069,6 +1073,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1194696166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194696161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de20a40157717c4bb3d04b11d4a34c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 5485501
+  _iOSGameId: 5485500
+  _testMode: 1
+--- !u!114 &1194696167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194696161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17ddbc2a19c8054fb100a73e55a174c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdUnitId: Rewarded_Android
+  iosAdUnitId: Rewarded_iOS
+--- !u!114 &1194696168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194696161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c89741d52bfd164fa49985ab41869d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdUnitId: Interstitial_Android
+  iosAdUnitId: Interstitial_iOS
+--- !u!114 &1194696169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194696161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50c4d51488de18458b54787661329d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdUnitId: banner_Android
+  iosAdUnitId: IOS_Banner
 --- !u!1 &1237125605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,9 +1963,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2752e884d4c8f849a1a194b8a92017b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalScoreUI: {fileID: 2043662557}
+  canvas: {fileID: 0}
   collisionHandler: {fileID: 1654872942}
   gameOverUI: {fileID: 80379729}
+  finalScoreUI: {fileID: 2043662557}
 --- !u!4 &1779787007
 Transform:
   m_ObjectHideFlags: 0
