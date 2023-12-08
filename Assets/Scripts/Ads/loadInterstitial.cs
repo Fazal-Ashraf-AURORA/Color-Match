@@ -8,6 +8,8 @@ public class loadInterstitial : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
 
     string adUnitId;
 
+    public static bool adLoaded = false;
+
     private void Awake() {
         #if UNITY_IOS
             adUnitId = iosAdUnitId;
@@ -23,7 +25,9 @@ public class loadInterstitial : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
 
     public void OnUnityAdsAdLoaded(string placementId) {
         print("interstitial loaded!!");
-        ShowAd();
+        adLoaded = true;
+        //ShowAd();
+
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message) {
@@ -32,6 +36,7 @@ public class loadInterstitial : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsS
 
     public void ShowAd() {
         print("showing ad!");
+
         Advertisement.Show(adUnitId, this);
     }
 

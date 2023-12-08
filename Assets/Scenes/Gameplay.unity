@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GotoMainMenu
         m_Mode: 1
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidGameId: 5485501
   _iOSGameId: 5485500
-  _testMode: 1
+  _testMode: 0
 --- !u!114 &1194696167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,31 +1578,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 80379729}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1762769591}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1673,17 +1649,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591801848}
   m_CullTransparentMesh: 1
---- !u!114 &1654872942 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6266364154639494056, guid: 5c1f9797ed7b0bb4db15315daa3cf94d, type: 3}
-  m_PrefabInstance: {fileID: 8860137080360377384}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e7d4d53759aff4e96156b9fdf450c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1673813449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1770,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GotoMainMenu
         m_Mode: 1
@@ -1943,7 +1908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779787007}
-  - component: {fileID: 1779787006}
+  - component: {fileID: 1779787008}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1951,22 +1916,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1779787006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779787005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2752e884d4c8f849a1a194b8a92017b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  collisionHandler: {fileID: 1654872942}
-  gameOverUI: {fileID: 80379729}
-  finalScoreUI: {fileID: 2043662557}
 --- !u!4 &1779787007
 Transform:
   m_ObjectHideFlags: 0
@@ -1982,6 +1931,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779787008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779787005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2752e884d4c8f849a1a194b8a92017b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameScreen: {fileID: 1762769591}
+  gameOverScreen: {fileID: 80379729}
+  pauseMenu: {fileID: 1237125605}
+  scoreText: {fileID: 1261485399}
+  finalScoreText: {fileID: 2043662557}
+  shapeGenerator: {fileID: 1171011009}
+  gameOverCount: 0
+  isGameActive: 0
+  isPaused: 0
+  objectNamesToDestroy:
+  - Blue_Circle(Clone)
+  - Blue_Sq(Clone)
+  - Red_Sq(Clone)
+  - Red_Circle(Clone)
 --- !u!1 &2043662555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1969,7 @@ GameObject:
   - component: {fileID: 2043662558}
   - component: {fileID: 2043662557}
   m_Layer: 5
-  m_Name: SCORE
+  m_Name: FINAL SCORE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2717,7 +2692,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -2870,31 +2845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1762769591}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1237125605}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
@@ -2970,7 +2921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1779787006}
+      - m_Target: {fileID: 1779787008}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1

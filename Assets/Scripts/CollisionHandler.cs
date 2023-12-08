@@ -6,8 +6,16 @@ public class CollisionHandler : MonoBehaviour {
     public TextMeshProUGUI scoreUI;
     public ChangeColorOnClick playerColorRef;
 
+    private GameManager gameManager;
+
 
     private void Start() {
+        gameManager = GameManager.instance;
+
+        if (gameManager == null) {
+            Debug.LogError("GameManager is not found. Make sure it is in the scene.");
+        }
+
         scoreUI.text = "Score:0";
         playerColorRef = GetComponent<ChangeColorOnClick>();
     }
@@ -23,20 +31,20 @@ public class CollisionHandler : MonoBehaviour {
             // Check if the circle has the same color as the player
             if (collision.gameObject.CompareTag("RedCircle") && playerColor == playerColorRef.color1) {
                 // Increase the score
-                GameManager.SCORE++;
-                scoreUI.text = "Score: " + GameManager.SCORE;
+                gameManager.IncreaseScore(1);
+                
                 
             } else if (collision.gameObject.CompareTag("BlueCircle") && playerColor == playerColorRef.color2) {
                 // Increase the score
-                GameManager.SCORE++;
-                scoreUI.text = "Score: " + GameManager.SCORE;
+                gameManager.IncreaseScore(1);
+                
                 
             } else if (collision.gameObject.CompareTag("RedCircle") && playerColor == playerColorRef.color2) {
                 // gameover
-                GameManager.isGameOver = true;
+                gameManager.GameOver();
             } else if (collision.gameObject.CompareTag("BlueCircle") && playerColor == playerColorRef.color1) {
                 // gameover
-                GameManager.isGameOver = true;
+                gameManager.GameOver();
             }
         }
 
@@ -48,19 +56,19 @@ public class CollisionHandler : MonoBehaviour {
             // Check if the square has the opposite color as the player
             if (collision.gameObject.CompareTag("RedSquare") && playerColor == playerColorRef.color2) {
                 // Increase the score
-                GameManager.SCORE++;
-                scoreUI.text = "Score: " + GameManager.SCORE;
-                
+                gameManager.IncreaseScore(1);
+
+
             } else if (collision.gameObject.CompareTag("BlueSquare") && playerColor == playerColorRef.color1) {
                 // Increase the score
-                GameManager.SCORE++;
-                scoreUI.text = "Score: " + GameManager.SCORE;
+                gameManager.IncreaseScore(1);
+                
             } else if (collision.gameObject.CompareTag("BlueSquare") && playerColor == playerColorRef.color2) {
                 // gameover
-                GameManager.isGameOver = true;
+                gameManager.GameOver();
             } else if (collision.gameObject.CompareTag("RedSquare") && playerColor == playerColorRef.color1) {
                 // gameover
-                GameManager.isGameOver = true;
+                gameManager.GameOver();
             }
         }
     }

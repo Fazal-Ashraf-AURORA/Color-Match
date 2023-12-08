@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidGameId: 5485501
   _iOSGameId: 5485500
-  _testMode: 1
+  _testMode: 0
 --- !u!4 &529010088
 Transform:
   m_ObjectHideFlags: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 529010085}
         m_TargetAssemblyTypeName: loadInterstitial, Assembly-CSharp
-        m_MethodName: LoadAd
+        m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -775,7 +775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 529010086}
         m_TargetAssemblyTypeName: loadBanner, Assembly-CSharp
-        m_MethodName: LoadBanner
+        m_MethodName: ShowBannerAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -976,7 +976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 529010084}
         m_TargetAssemblyTypeName: loadRewarded, Assembly-CSharp
-        m_MethodName: LoadAd
+        m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

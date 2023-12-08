@@ -3,12 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
+    
 
     private void Start() {
         Application.targetFrameRate = 60;
     }
     public void PlayGame() {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void QuitGame() {

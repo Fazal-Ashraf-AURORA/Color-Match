@@ -37,6 +37,7 @@ public class loadBanner : MonoBehaviour
 
     public void OnBannerLoadError(string error) {
         print("Banner failed to load "+ error);
+        
     }
 
     public void ShowBannerAd() {

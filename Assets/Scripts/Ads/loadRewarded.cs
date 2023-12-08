@@ -18,7 +18,7 @@ public class loadRewarded : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowL
 
     public void LoadAd() {
         print("Loading Rewarded!!");
-        Advertisement.Load(adUnitId, this);
+        //Advertisement.Load(adUnitId, this);
     }
 
     public void OnUnityAdsAdLoaded(string placementId) {
